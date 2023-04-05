@@ -17,7 +17,7 @@ type Server struct {
 func (s *Server) GetEnvVariable(ctx context.Context, req *pb.EnvRequest) (*pb.EnvResponse, error) {
 	env := req.GetEnvName()
 	if _, ok := os.LookupEnv(env); !ok {
-		return &pb.EnvResponse{}, fmt.Errorf("env %s is not set", env)
+		return nil, fmt.Errorf("env %s is not set", env)
 	}
 	val := os.Getenv(env)
 	return &pb.EnvResponse{EnvValue: val}, nil

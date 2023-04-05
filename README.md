@@ -16,7 +16,12 @@ Usage of ./frontend:
   -addr string
     	Server address string (default ":8080")
 ```
-NOTE: `GRPC_SERVER env variable can be used to set the address if the gRPC server is running on different node`
+NOTE: 
+```
+GRPC_SERVER env variable can be used to set the address if the gRPC server is running on different node.
+For example: export GRPC_SERVER="10.10.10.3:9000"
+If not set, default value of ":9000" is used as GRPC server
+```
 
 ## Example
 Start frontend and backend on two different terminals
